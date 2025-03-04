@@ -1,0 +1,10 @@
+El enunciado nos dice que el fichero se encuentra en cualquier sitio el propietario usuario es bandit7 y de grupo bandit6 con un tamaño de 33 bytes
+Este nivel es igual que el anterior pero cambiando la ruta y poniendo estos otros parametros:
+
+-user usuario propietario
+-group grupo propietario
+
+find / -user bandit7 -group bandit6 -size 33c 2>/dev/null | xargs cat
+
+si nos fijamos esta "2>/dev/null", esto significa que el stderr (errores del output del comando) los envíe a /dev/null que es un la nada.
+

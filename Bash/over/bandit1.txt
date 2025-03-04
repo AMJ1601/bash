@@ -1,0 +1,4 @@
+Es lo mismo, un archivo que contiene la contraseña, pero el archivo se llama -.
+El problema de esto es que el - lo detecta como que le vamos a dar un parametro al cat, entonces tenemos que definir la ruta en el comando.
+
+cat ./-

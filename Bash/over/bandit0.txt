@@ -1,0 +1,6 @@
+Primer nivel sencillo, solo hay que hacer un cat o more al readme.
+Para complicarlo un poco, con el output del cat vamos a hacer que nos diga solo la contraseña
+
+cat readme | tail -2 | head -1 | awk '{print $NF}'
+
+

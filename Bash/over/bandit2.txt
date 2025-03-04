@@ -1,0 +1,4 @@
+Ahora el archivo que contiene la contraseña tiene espacios, hay varias maneras de resoverlo:
+
+cat spaces*
+cat spaces\ in\ this\ filename

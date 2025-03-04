@@ -1,0 +1,5 @@
+En el archivo data.txt esta la contraseña codificada en base 64.
+
+base64 -d data.txt | awk '{print $NF}'
+
+-d lo que hace es decodificarlo.

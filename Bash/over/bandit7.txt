@@ -1,0 +1,15 @@
+Nos dice que la contraseña se encuentra en el archivo data.txt cerca de la palabra millionth
+
+Pues usamos grep que es un filtro que le aplicamos.
+
+grep "millionth" data.txt
+
+Hacerlo así es muy fácil así que le añadimos un plus de dificultad para practicar más.
+
+grep "millionth" data.txt | rev | awk '{print $1}' | rev
+
+rev es un comando que revierte los caracteres, teniendo en cuenta que el output del primer comando dicho es solo una línea
+lo que estamos haciendo es revertir los caracteres de modo que la última palabra pasa a ser la primera, le hacemos awk $1 significa el primero argumento y lo volvemos a revertir.
+
+Esto obviamente no es eficiente, pero así practicamos mas bash.
+

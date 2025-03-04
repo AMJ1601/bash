@@ -1,0 +1,32 @@
+Este nivel si que debemos usar find, nos dice que es un archivo que pesa 1033 bytes, no es ejecutable y no es leible por humanos.
+
+Voy a ir parámetro por parámetro para explicar que hace:
+
+find <- es el comando
+. <- donde queremos buscar
+-size 1033c <- le decimos que el archivo debe pesar 1033c que la c significa bytes
+! -exevutable <- -executable le decimos que sea ejecutable pero hay ! delante, en bash ! significa lo contrario, osea que no sea ejecutable
+
+el comando quedaría así:
+
+find . ! executable -size 1033c | xargs file
+
+Solo queda hacerle un cat.
+
+Si hacemos un | xargs cat al final no va a funcionar porque el output no es un archiv.
+
+
+si le hacemos un cat al fichero sale muy feo, con muchos espacios, para arreglarlo podemos hacer esto
+
+cat <fichero> | xargs <- xargs también elimina los espacios porque no es nada que pueda interpretar
+sed 's/ //g' ./maybehere07/.file2
+cat ./maybehere07/.file2 | sed 's/ //g'
+
+Con sed lo que estamos haciendo es:
+s <- sustitucion
+/ <- de espacios en blanco
+// <- por nada
+g <- aplicamelo a todas las veces que ocurra
+
+La diferncia entre hacer el cat primero es que haciendo el cat tardará más.
+

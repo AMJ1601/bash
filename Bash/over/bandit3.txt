@@ -1,0 +1,15 @@
+El archivo se situa en una carpeta con la que entramos con un cd,
+además de que esta el archivo oculto, para verlo le hacemos un:
+ls -a y si lo quieres mas ordenado ls -a1
+
+y solo queda hacerle un cat
+
+se puede complicar si jugamos con el output de ls
+
+ls -a1 | tail -1 | xargs cat
+
+lo que estamos haciendo es un ls a la carpeta actual y que solo me diga la última linea del output y a este nuevo output
+le apliquemos un cat con xargs.
+
+que si recordamos xargs es para ejecutar comandos sobre el output de otro.
+

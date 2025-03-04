@@ -1,0 +1,11 @@
+Nos dice que la contraseña esta en unas strings leibles por humanos detrás de ===.
+
+strings <- nos muestra cadenas de texto imprimibles.
+
+y solo nos queda filtrarlo por ==.
+
+strings data.txt | grep ====
+
+como se nos muestra la contraseña en la última linea seguimos practicando.
+
+strings data.txt | grep === | tail -1 | awk '{print $NF}'

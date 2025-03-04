@@ -1,0 +1,10 @@
+El siguiente nivel nos dice que la contraseña esta escondida en un archivo que solo es leible por humanos (ASCII).
+
+Para resolverlo debemos usar el comando file que nos dice el tipo de fichero que es, el problema que hacer un file archivo por archivo es muy lento.
+Así que para hacerlo mas rápido vamos a usar tembién el comando find que es para buscar archivos.
+
+Pero si lo pensamos mas sencillo sería usar ls pero ls no interpreta bien los nombres de los archivos y da fallos.
+
+find . | xargs file
+cat <archivo que sea ascii>
+

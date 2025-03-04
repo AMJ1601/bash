@@ -1,0 +1,7 @@
+La contraseña esta rotada 13 posiciones
+
+con tr podemos hacer sustituciones, entonces si lo tenemos que rotar 13 posiciones pues:
+cat data.txt | tr "A-Za-z" "N-ZA-Mn-za-m"
+
+Estamos diciendo que todo lo que vaya de la a hacia la z tanto mayúscula como minúscula
+le reemplazemos de la n a la z y de la a a la m

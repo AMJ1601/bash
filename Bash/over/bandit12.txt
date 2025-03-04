@@ -1,0 +1,31 @@
+El archivo contiene un hexadecimal que lo pasamos a local simplemente copiando y pegando.
+con xxd podemos poner en formato hexadecimal y con -r lo revertimos.
+xxd -r data.txt
+
+si nos fijamos es un archivo .bin, asi que lo vamos a poner como se debe.
+
+xxd -r data.txt > archivo.bin
+
+Ahora que sabemos que es un comprimido podemos hacer un 7z l para ver que hay dentro.
+Lo que hay son mas comprimidos así para acelerar el proceso y aprender vamos a hacer un script sencillo.
+
+
+#!/bin/bash
+
+if [ -z $1 ]; then
+        echo "dame el nombre del comprimido"
+        exit 1
+fi
+
+name=$1
+siguiente_archivo=$(7z l $name | grep Name -A 2 | tail -1 | awk '{print$NF}')
+
+7z x $name &>/dev/null
+while true; do
+        7z x $siguiente_archivo &>/dev/null
+        if [ $? != 0 ]; then
+                cat $siguiente_archivo
+                exit 0
+        fi
+        siguiente_archivo=$(7z l $siguiente_archivo | grep Name -A 2 | tail -1 | awk '{print $NF}')
+done

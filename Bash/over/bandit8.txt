@@ -1,0 +1,5 @@
+En este nivel nos dice que donde esta la línea con la contraseña no se repite nunca.
+Para resolverlo usamos sort que ordena alfabéticamente y uniq -u
+uniq muestra una sola línea con las líneas que se duplican osea que no repite líneas y -u para que filtre por las que no se repiten nunca.
+
+sort data.txt | uniq -u
