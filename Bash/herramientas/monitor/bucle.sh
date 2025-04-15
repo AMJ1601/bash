@@ -21,19 +21,6 @@
             echo "[-] No se instalar el paquete"
         fi
     fi
-    dpkg -l | grep cbm &>/dev/null
-    if [ $? != 0 ]; then
-        echo "[?] Para una mejor monitorizacion debemos instalar sysstat ¿quieres proceder? [S/n]"
-        read instalar
-        if [ -z $instalar ]; then
-        echo "[?] Por favor, dime si lo quieres instalar [S/n]"
-        read instalar
-        elif [ $instalar == S || $instalar == s ]; then
-            apt install sysstat -y
-        else
-            echo "[-] No se instalar el paquete"
-        fi
-    fi
 
 while true; do
     if [ $UID != 0 ]; then
